@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js" charset="utf-8"></script>
+    <title>Around The World</title>
+    <style>
+      body {
+        background-color: black;
+        min-height: 100vh;
+      }
+
+      .planet {
+        display: absolute;
+        z-index: 1;
+      }
+
+      .text {
+        display: absolute;
+        text-align: center;
+      }
+
+      p {
+        position: relative;
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: 4vw;
+        text-align: center;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+        100% {
+          background-position: 500%;
+        }
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        width: 25vmin;
+        height: 25vmin;
+        margin: 12vw 42vw;
+        position: fixed;
+        z-index: 2;
+        transform-style: preserve-3d;
+        border-radius: 50%;
+        background: #7000FF;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      a:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 2vmin solid white;
+        border-bottom-style: none;
+        border-left-width: 0;
+        border-right-width:0;
+        border-radius: 50%;
+        animation: f 3s linear infinite;
+      }
+
+      @keyframes f {
+        from {
+          transform: translate(0, 15%)rotateX(0.25turn)rotate(0)rotateY(
+              -1turn
+            )scale(1.25);
+        }
+        to {
+          transform: translate(0, -15%)rotateX(0.25turn)rotate(1turn)rotateY(
+              1turn
+            )scale(1.25);
+        }
+      }
+
+    </style>
+    <script type="text/javascript">
+      $("a").mouseenter (function() {
+        $("audio")[0].play()
+      })
+      $("a").mouseleave (function() {
+        $("audio")[0].pause()
+      })
+      $('a').click(function(){
+        $('audio')[0].play();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="planet">
+      <a class="fx"></a>
+      <audio src="audio/around_the_world.mp3"></audio>
+    </div>
+    <div class="text">
+      <script>
+        let numberOfTimes = 30
+        while (numberOfTimes > 0){
+          document.write("<p>Around the world, around the world</p>")
+          numberOfTimes = numberOfTimes - 1
+        }
+      </script>
+    </div>
+  </body>
+</html>
