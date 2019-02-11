@@ -29,7 +29,6 @@
         animation: animate 3s linear infinite;
         -webkit-background-clip: text;
         -webkit-text-fill-color: rgba(255, 255, 255, 0);
-
       }
 
       @keyframes animate {
@@ -39,10 +38,6 @@
         100% {
           background-position: 500%;
         }
-      }
-
-
-      .planet {
       }
 
       a {
@@ -107,7 +102,7 @@
       $("a").mouseenter (function() {
         $("audio")[0].play()
         $("a").css({
-          "transform": "scale(1.5)",
+          "transform": "scale(1.5)" + "rotate(30deg)",
           "background": "#C04CFD",
           "transition": "1s"
         })
@@ -115,7 +110,7 @@
       $("a").mouseleave (function() {
         $("audio")[0].pause()
         $("a").css({
-          "transform": "scale(1)",
+          "transform": "scale(1)" + "rotate(180deg)",
           "background": "#7000FF",
           "transition": "1s"
         })
