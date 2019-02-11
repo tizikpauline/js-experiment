@@ -26,7 +26,7 @@
         background: linear-gradient(90deg, #000, #fff, #000);
         background-repeat: no-repeat;
         background-size: 80%;
-        animation: animate 3s linear infinite;
+        animation: animate 4s linear infinite;
         -webkit-background-clip: text;
         -webkit-text-fill-color: rgba(255, 255, 255, 0);
       }
@@ -51,6 +51,7 @@
         border-radius: 50%;
         background: #7000FF;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
       }
 
       a::before {
@@ -91,7 +92,7 @@
     </div>
     <div class="text">
       <script>
-        let numberOfTimes = 30
+        let numberOfTimes = 72
         while (numberOfTimes > 0) {
           document.write("<p>Around the world, around the world</p>")
           numberOfTimes = numberOfTimes - 1
@@ -99,6 +100,7 @@
       </script>
     </div>
     <script type="text/javascript">
+      alert("Turn up the volume!")
       $("a").mouseenter (function() {
         $("audio")[0].play()
         $("a").css({
